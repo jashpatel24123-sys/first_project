@@ -26,7 +26,7 @@ function EmployeeForm({ onSubmit, editingEmployee, onCancelEdit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(formData).some((v) => v.trim() === "")) {
+    if (Object.values(formData).some((v) => !v || String(v).trim() === "")) {
       alert("Please fill in all fields.");
       return;
     }
